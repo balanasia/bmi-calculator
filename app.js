@@ -1,10 +1,12 @@
 const express = require("express");
 const bodyParser = require("body-parser");
-
-app.use(bodyParser.urlencoded({extended:true}));
+const ejs = require("ejs");
 
 //initilize Express
 const app = express();
+
+app.use(bodyParser.urlencoded({extended:true}));
+
 //initilize EJS
 app.set('view engine', 'ejs');
 
@@ -12,7 +14,7 @@ app.set('view engine', 'ejs');
 app.use(express.static("public"));
 
 app.get("/", function(req, res){
-  res.redner("home");
+  res.render("home");
 });
 
 app.post("/results", function(req, res){
