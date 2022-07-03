@@ -1,6 +1,7 @@
 html,
 body {
   height: 100%;
+  color: #576F72
 }
 
 body {
@@ -8,5 +9,39 @@ body {
   align-items: center;
   padding-top: 40px;
   padding-bottom: 40px;
-  background-color: pink;
+  background-color: #7D9D9C;
+}
+
+.header-txt {
+  text-align: center;
+}
+
+.top-image {
+  margin: 20px;
+  width: 20%;
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.card {
+  background-color: #F0EBE3;
+}
+
+.form-floating {
+  margin: 2%;
+  text-align: center;
+}
+
+.form-check {
+  display: inline-block;
+  text-align: center;
+}
+
+.form-check-input {
+ float: left;
+}
+
+form-check-label {
+  float: left;
 }
