@@ -1,15 +1,21 @@
 const express = require("express");
-const app = express();
 const bodyParser = require("body-parser");
 
 app.use(bodyParser.urlencoded({extended:true}));
 
+//initilize Express
+const app = express();
+//initilize EJS
+app.set('view engine', 'ejs');
 
-app.get("/bmicalculator", function(req, res){
-  res.sendFile(__dirname + "/bmicalculator.html");
+//use the public folder for the data
+app.use(express.static("public"));
+
+app.get("/", function(req, res){
+  res.redner("home");
 });
 
-app.post("/", function(req, res){
+app.post("/results", function(req, res){
   var weight = parseFloat(req.body.weight);
   var height = parseFloat(req.body.height);
   var result = weight/(height*height);
