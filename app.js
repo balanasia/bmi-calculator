@@ -20,11 +20,22 @@ app.get("/", function(req, res){
 app.post("/results", function(req, res){
   const weight = parseFloat(req.body.weight);
   const height = parseFloat(req.body.height);
+  var range = "";
+
 
   const result = (((weight)/(height*height))*10000).toFixed(1);
-  console.log(result);
 
-  res.render("results");
+  if (result <= 18.5) {
+    range = "You are in the underweight weight range";
+  } else if (result <= 18.5 || result <= 24.9) {
+    range = "You are in the healthy weight range";
+  } else if(result <= 25 || result <= 29.9) {
+    range = "You are in the overweight range";
+  } else if(result >= 30) {
+    range = "You are in the obese range";
+  }
+
+  res.render("results", {result: result, range: range});
 });
 
 

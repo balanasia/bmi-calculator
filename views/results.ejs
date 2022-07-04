@@ -1,5 +1,36 @@
 <%- include("partials/header"); -%>
 <div class="card">
-  
+  <img class="top-image" src="images/results.png" alt="Results Icon">
+  <h1>Your BMI is <%= result %></h1>
+  <p><%= range %></p>
+
+  <h2>BMI Range</h2>
+
+  <table class="table">
+    <thead class="thead-dark">
+      <tr>
+        <th scope="col">BMI Range</th>
+        <th scope="col">Weight Status</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td>Below 18.5</td>
+        <td>Underweight</td>
+      </tr>
+      <tr>
+        <td>18.5-24.9</td>
+        <td>Normal Weight</td>
+      </tr>
+      <tr>
+        <td>25.0-29.9</td>
+        <td>Overweight</td>
+      </tr>
+      <tr>
+        <td>30.0 and Above</td>
+        <td>Obese</td>
+      </tr>
+    </tbody>
+  </table>
 </div>
 <%- include("partials/footer"); -%>
