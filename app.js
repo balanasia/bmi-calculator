@@ -18,11 +18,16 @@ app.get("/", function(req, res){
 });
 
 app.post("/results", function(req, res){
-  var weight = parseFloat(req.body.weight);
-  var height = parseFloat(req.body.height);
-  var result = weight/(height*height);
-  res.send("Your BMI is "+ result);
+  const weight = parseFloat(req.body.weight);
+  const height = parseFloat(req.body.height);
+
+  const result = (((weight)/(height*height))*10000).toFixed(1);
+  console.log(result);
+
+  res.render("results");
 });
+
+
 
 app.listen(3000, function(){
   console.log("Server started at port 3000");
