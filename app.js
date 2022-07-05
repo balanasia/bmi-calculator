@@ -14,10 +14,17 @@ app.set('view engine', 'ejs');
 app.use(express.static("public"));
 
 app.get("/", function(req, res){
-  res.render("home");
+  console.log();
+  res.render("metric");
+});
+
+app.get("/imperial", function(req, res){
+  res.render("imperial");
 });
 
 app.post("/results", function(req, res){
+
+
   const weight = parseFloat(req.body.weight);
   const height = parseFloat(req.body.height);
   var range = "";

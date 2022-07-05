@@ -33,21 +33,6 @@ body {
   margin: 2%;
 }
 
-.form-check-label {
-   display: inline-block;
-    vertical-align: top;
-    margin-right: 3%;
-}
-.form-control {
-   display: inline-block;
-    vertical-align: top;
-}
-
-.form-check {
-    display: inline-block;
-    margin: auto;
-}
-
 .btn {
   margin-top: 2%;
 }
